@@ -15,6 +15,7 @@ def _get_github_auth_responders():
         pattern="Password for 'https://{}@github.com':".format(github_username),
         response='{}\n'.format(github_password)
     )
+    print('调用获取github用户名和密码')
     return [username_responder, password_responder]
 
 
@@ -24,15 +25,17 @@ def deploy(c):
     supervisor_program_name = 'myblog'
 
     project_root_path = '~/apps/myblog/'
-
+    print("进入deploy")
     # 先停止应用
-    with c.cd(supervisor_conf_path):
-        cmd = 'supervisorctl stop {}'.format(supervisor_program_name)
-        c.run(cmd)
+#    with c.cd(supervisor_conf_path):
+#        cmd = 'supervisorctl stop {}'.format(supervisor_program_name)
+#       print("暂停应用")
+#       c.run(cmd)
 
     # 进入项目根目录，从 Git 拉取最新代码
     with c.cd(project_root_path):
         cmd = 'git pull'
+        print("拉取代码")
         responders = _get_github_auth_responders()
         c.run(cmd, watchers=responders)
 
@@ -41,8 +44,10 @@ def deploy(c):
         c.run('pipenv install --deploy --ignore-pipfile')
         c.run('pipenv run python manage.py migrate')
         c.run('pipenv run python collectstatic --noinput')
+        print("部署")
 
     # 重新启动应用
     with c.cd(supervisor_conf_path):
-        cmd = 'supervisorctl start {}'.format(supervisor_program_name)
+        cmd = 'supervisord -c {}'.format('~/etc/supervisord.conf')
+        print("启动应用")
         c.run(cmd)
