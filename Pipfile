@@ -22,7 +22,7 @@ wtforms = "==2.0.1"
 werkzeug = "==0.9.6"
 html5lib = "==1.0b3"
 itsdangerous = "==0.24"
-six = "==1.8.0"
+six = "==1.9.0"
 awesome-slugify = "==1.6"
 Flask = "==0.10.1"
 Flask-Login = "==0.2.11"
@@ -31,6 +31,7 @@ Flask-Script = "==2.0.5"
 django = "==2.2.3"
 django-pure-pagination = "*"
 pymysql = {index = "http://pypi.douban.com/simple/", version = "*"}
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
