@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% block main %}
+                {% for post in postlist %}
+                <article class="post  post-{{ post.pk }}">
+                    <header class="entry-header">
+                        <h1 class="entry-title">
+                            <a href="/blog/posts/{{ post.pk }}">{{ post.title }}</a>
+                        </h1>
+                        <div class="entry-meta">
+                            <span class="post-category"><a href="{% url 'blog:category' post.category.pk %}">{{ post.category.name }}</a></span>
+                            <span class="post-date"><a href="#"><time class="entry-date"
+                                                                      datetime="{{ post.create_time }}">{{ post.create_time }}</time></a></span>
+                            <span class="post-author"><a href="#">{{ post.user }}</a></span>
+                            <span class="comments-link"><a href="#评论">{{ post.comment_set.count }} 评论</a></span>
+                            <span class="views-count"><a href="#">{{ post.view }} 阅读</a></span>
+                        </div>
+                    </header>
+                    <div class="entry-content clearfix" id="评论">
+                        <p>{{ post.excerpt }}</p>
+                        <div class="read-more cl-effect-14">
+                            <a href="/blog/posts/{{ post.pk }}" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
+                        </div>
+                    </div>
+                </article>
+                {% empty %}
+                <div class="no-post">暂时还没有发布的文章！</div>
+                {% endfor %}
+
+
+                <!-- 简单分页效果
+                <div class="pagination-simple">
+                    <a href="#">上一页</a>
+                    <span class="current">第 6 页 / 共 11 页</span>
+                    <a href="#">下一页</a>
+                </div>
+                -->
+{% if is_paginated %}
+    {{ page_obj.render }}
+{% endif %}
+
+
+{% endblock main %}
+
+{% block toc %}
+{% endblock toc %}
+
