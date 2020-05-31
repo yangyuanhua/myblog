@@ -1,2 +1,4 @@
 static/
 _credentials.py
+*.pyc
+
