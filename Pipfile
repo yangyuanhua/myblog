@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+fabric = {index = "http://pypi.douban.com/simple/", version = "*"}
 
 [packages]
 flask-moment = "==0.4.0"
