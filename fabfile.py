@@ -44,7 +44,7 @@ def deploy(c):
         c.run('pipenv install --deploy --ignore-pipfile')
         c.run('pipenv run python manage.py makemigrations')
         c.run('pipenv run python manage.py migrate')
-        c.run('pipenv run python collectstatic --noinput')
+        c.run('pipenv run python manage.py collectstatic --noinput')
         print("部署")
 
     # 重新启动应用
