@@ -43,7 +43,7 @@ def deploy(c):
     with c.cd(project_root_path):
         c.run('pipenv install --deploy --ignore-pipfile')
         c.run('pipenv run python manage.py makemigrations')
-	c.run('pipenv run python manage.py migrate')
+        c.run('pipenv run python manage.py migrate')
         c.run('pipenv run python collectstatic --noinput')
         print("部署")
 
