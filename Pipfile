@@ -29,10 +29,11 @@ Flask = "==0.10.1"
 Flask-Login = "==0.2.11"
 Flask-Mail = "==0.9.1"
 Flask-Script = "==2.0.5"
-django = "==2.2.3"
 django-pure-pagination = "*"
-pymysql = {index = "http://pypi.douban.com/simple/", version = "*"}
 gunicorn = "*"
+django-haystack = "*"
+django = {index = "http://pypi.douban.com/simple/", version = "==2.2.3"}
+mysqlclient = "*"
 
 [requires]
 python_version = "3.6"
