@@ -34,6 +34,8 @@ gunicorn = "*"
 django-haystack = "*"
 django = {index = "http://pypi.douban.com/simple/", version = "==2.2.3"}
 mysqlclient = "*"
+pymysql = "*"
+elasticsearch = ">=2,<3"
 
 [requires]
 python_version = "3.6"

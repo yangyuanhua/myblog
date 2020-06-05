@@ -15,6 +15,6 @@ urlpatterns = [
     url(r"^categories/(?P<pk>\d+)$",views.CategoryView.as_view(),name="category"),
     # url(r"^tags/(?P<pk>\d+)$",views.tag,name="tag"),
     url(r"^tags/(?P<pk>\d+)$",views.TagView.as_view(),name="tag"),
-    url(r"^search/",views.search,name="search"),
+    # url(r"^search/",views.search,name="search"),
 
 ]

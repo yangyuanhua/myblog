@@ -9,3 +9,4 @@ COPY ./compose/production/elasticsearch/elasticsearch.yml /usr/share/elasticsear
 RUN chown elasticsearch:elasticsearch /usr/share/elasticsearch/config/elasticsearch.yml
 
 USER elasticsearch
+
