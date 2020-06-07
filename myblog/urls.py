@@ -28,4 +28,5 @@ urlpatterns = [
     url(r"^all/rss",AllPostsRssFeed(),name="rss"),
     url(r"^search/",include("haystack.urls")),
     url(r"^test$",views.test_view,name="test"),
+    url(r"^math$",views.math_view,name="math"),
 ]

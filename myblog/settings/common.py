@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "comment",
     "pure_pagination",
     "haystack",
+    "myblog",
 ]
 
 MIDDLEWARE = [
@@ -136,7 +137,7 @@ PAGINATION_SETTINGS = {
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'blog.elasticsearch2_ik_backend.Elasticsearch2IkSearchEngine',
-        'URL': '',
+        'URL': 'http://172.18.0.2:9200/',
         'INDEX_NAME': 'myblog',
     },
 }

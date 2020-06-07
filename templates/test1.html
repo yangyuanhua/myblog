@@ -53,7 +53,7 @@
 			{% for i in dirlist %}
 			<li class="list-group-item">
 				<span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>
-				<a href="/static/math/{{ i }}">{{ i }}</a>
+				<a href="/math?name={{ i }}">{{ i }}</a>
 			</li>
 			{% endfor %}
 		{% endif %}
