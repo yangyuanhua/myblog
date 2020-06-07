@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
 from blog.feeds import AllPostsRssFeed
-from blog import views
+from . import views
 
 
 urlpatterns = [
@@ -27,4 +27,5 @@ urlpatterns = [
     url(r"^comment/",include("comment.urls")),
     url(r"^all/rss",AllPostsRssFeed(),name="rss"),
     url(r"^search/",include("haystack.urls")),
+    url(r"^test$",views.test_view,name="test"),
 ]

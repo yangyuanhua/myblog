@@ -77,6 +77,10 @@ DATABASES = {
         "PASSWORD":"123456",
         "HOST":"0.0.0.0",
         "PORT":"3306",
+        'TEST': {
+            'CHARSET': 'utf8',
+            'COLLATION': 'utf8_general_ci',
+        }
     }
 }
 
