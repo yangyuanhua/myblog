@@ -1,0 +1,18 @@
+version: '3'
+
+volumes:
+  static:
+
+services:
+
+  nginx:
+    build:
+      context: .
+      dockerfile: compose/production/nginx/Dockerfile
+    image: myblog_nginx
+    container_name: myblog_nginx
+    volumes:
+      - /home/yangyuanhua/apps/myblog/static:/static
+    ports:
+      - "80:80"
+      - "443:443"
