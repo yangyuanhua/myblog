@@ -116,8 +116,8 @@ class CategoryView(IndexView):
 
 #标签视图
 class TagView(IndexView):
-    def get_requryset(self):
-        tag = get_object_or_404(Tag,pk="pk")
+    def get_queryset(self):
+        tag = get_object_or_404(Tag,pk=self.kwargs.get("pk"))
         return super(TagView,self).get_queryset().filter(tag=tag)
 
     # def tag(request,pk):

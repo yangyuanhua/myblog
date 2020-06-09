@@ -6,7 +6,7 @@ from .models import Category,Post,Tag
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ["title","category","user","id"]
-    fields = ["title","body","category","tag","user"]
+    fields = ["title","body","category","tag","user","create_time"]
 
 class TagAdmin(admin.ModelAdmin):
     list_display = ["id","name"]

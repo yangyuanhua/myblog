@@ -36,6 +36,7 @@ django = {index = "http://pypi.douban.com/simple/", version = "==2.2.3"}
 mysqlclient = "*"
 pymysql = "*"
 elasticsearch = ">=2,<3"
+faker = {index = "http://mirrors.aliyun.com/pypi/simple/", version = "*"}
 
 [requires]
 python_version = "3.6"
